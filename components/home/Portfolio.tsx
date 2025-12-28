@@ -6,8 +6,8 @@ import { ExternalLink, Store, Briefcase, ArrowUpRight, CheckCircle2, Zap } from 
 const projects = [
   {
     title: "Hardstyle Custom",
-    description: "E-commerce completo para loja de carros personalizados. Catálogo dinâmico, sistema de orçamentos e checkout integrado.",
-    type: "E-commerce & Branding",
+    description: "Loja de carros personalizada de acordo com o gosto do cliente, com sistema de multi-idioma.",
+    type: "Loja de Carros",
     icon: <Store className="w-6 h-6" />,
     color: "from-blue-600 to-cyan-600",
     gradient: "from-blue-500/20 to-cyan-500/20",
