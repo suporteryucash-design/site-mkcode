@@ -91,7 +91,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6 text-purple-400" />
                 </div>
                 <h3 className="text-white font-bold mb-1">Email</h3>
-                <p className="text-gray-400 text-sm mb-3">contato@mkdev.com</p>
+                <p className="text-gray-400 text-sm mb-3">mkcodesolutions@gmail.com</p>
                 <span className="text-purple-400 text-sm flex items-center gap-1">
                   Respondo em 24h
                 </span>
