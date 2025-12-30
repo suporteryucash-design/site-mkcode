@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     template: "%s | MK Code Solutions",
   },
   description: "Transforme seu negócio com tecnologia de ponta. Desenvolvimento de sites de alta performance, sistemas SaaS, lojas virtuais e automação de processos.",
+  
+  // --- ADICIONADO AQUI ---
+  verification: {
+    google: "E96eYPC4qKkdGXtpD5nXPF_4HJaa4lufIob3H9c0uok",
+  },
+  // -----------------------
+
   keywords: ["Desenvolvimento Web", "SaaS", "Automação", "Next.js", "Sites Profissionais", "MK Code Solutions"],
   authors: [{ name: "Murilo Kenji" }],
   openGraph: {

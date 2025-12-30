@@ -1,7 +1,7 @@
 // src/components/home/Portfolio.tsx
 "use client";
 
-import { ExternalLink, Store, Briefcase, ArrowUpRight, CheckCircle2, Zap, Sparkles } from "lucide-react";
+import { ExternalLink, Store, Briefcase, CheckCircle2, Zap, Sparkles } from "lucide-react";
 
 const projects = [
   {
@@ -12,7 +12,8 @@ const projects = [
     color: "from-blue-600 to-cyan-600",
     gradient: "from-blue-500/20 to-cyan-500/20",
     link: "https://www.hardstylecustom.com",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "SEO Avançado"],
+    image: "/images/portfolio/banner1.jpg",
+    tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Contentful CMS"],
     metrics: [
       { label: "Vendas", value: "+40%" },
       { label: "Performance", value: "0.8s" },
@@ -21,17 +22,18 @@ const projects = [
   },
   {
     title: "RyuBook SaaS",
-    description: "Plataforma de agendamentos e gestão para profissionais. Sistema multi-idioma com dashboard financeiro e pagamentos via Stripe.",
+    description: "Plataforma de agendamentos e gestão para profissionais. Sistema multi-idioma com dashboard financeiro.",
     type: "Plataforma SaaS",
     icon: <Briefcase className="w-6 h-6" />,
     color: "from-purple-600 to-pink-600",
     gradient: "from-purple-500/20 to-pink-500/20",
     link: "https://www.ryubook.com",
-    tech: ["Next.js 14", "Stripe", "PostgreSQL", "TypeScript"],
+    image: "/images/portfolio/banner2.jpg",
+    tech: ["Next.js 15", "Stripe", "Prisma ORM", "NextAuth", "Pusher Realtime", "Tailwind v4"],
     metrics: [
       { label: "Status", value: "Validado" },
-      { label: "Idiomas", value: "4 Suportados" },
-      { label: "Users", value: "Em crescimento" }
+      { label: "Idiomas", value: "4" },
+      { label: "Users", value: "Ativos" }
     ]
   },
   {
@@ -39,10 +41,11 @@ const projects = [
     description: "Website institucional de alto padrão para clínica de estética. Design minimalista focado na experiência do usuário.",
     type: "Beleza & Estética",
     icon: <Sparkles className="w-6 h-6" />,
-    color: "from-rose-500 to-orange-400", // Gradiente estilo "Rose Gold"
+    color: "from-rose-500 to-orange-400",
     gradient: "from-rose-500/20 to-orange-500/20",
     link: "https://www.esteticainovar.com",
-    tech: ["Next.js", "Animation", "UI/UX Design", "Responsivo"],
+    image: "/images/portfolio/banner3.jpg",
+    tech: ["Next.js 16", "React 19", "Tailwind v4", "Framer Motion", "TypeScript"],
     metrics: [
       { label: "Design", value: "Premium" },
       { label: "Retenção", value: "Alta" },
@@ -55,12 +58,8 @@ export default function Portfolio() {
   return (
     <section id="projetos" className="relative py-20 lg:py-32 bg-neutral-950 overflow-hidden">
       
-      {/* --- EFEITOS DE FUNDO (Padronizado) --- */}
-      
-      {/* 1. A LUZ DE DIVISÓRIA (Linha superior brilhante) */}
+      {/* --- EFEITOS DE FUNDO --- */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
-
-      {/* 2. Orbs de luz (Blur nos cantos) */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -89,14 +88,14 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="group relative bg-neutral-900/50 backdrop-blur-sm border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-all duration-500 hover:shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)]"
+              className="group relative bg-neutral-900/50 backdrop-blur-sm border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 transition-all duration-500 hover:shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] flex flex-col h-full"
             >
               {/* Brilho Superior no Hover */}
               <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
               <div className="p-8 md:p-10 flex flex-col h-full">
                 {/* Header do Card */}
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
                   <div className="flex items-start gap-4">
                     <div className={`p-4 rounded-2xl bg-gradient-to-br ${project.gradient} border border-white/5 group-hover:scale-110 transition-transform duration-500`}>
                       <div className="text-white">
@@ -105,29 +104,36 @@ export default function Portfolio() {
                     </div>
                     <div>
                       <div className="text-sm font-medium text-blue-400 mb-1">{project.type}</div>
-                      <h3 className="text-2xl font-bold text-white leading-tight">{project.title}</h3>
+                      <h3 className="text-2xl font-bold text-white leading-tight h-[3.5rem] flex items-center">{project.title}</h3>
                     </div>
                   </div>
+                  {/* (Setinha removida daqui conforme solicitado) */}
+                </div>
 
-                  {project.link !== "#" && (
-                    <a 
-                      href={project.link}
-                      target="_blank"
-                      className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all duration-300 flex-shrink-0"
-                    >
-                      <ArrowUpRight className="w-5 h-5" />
-                    </a>
-                  )}
+                {/* --- ÁREA DA MINI FOTO --- */}
+                <div className="w-full h-48 mb-6 rounded-xl overflow-hidden border border-white/5 relative bg-neutral-900 shrink-0">
+                    <div className={`absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent opacity-30 z-10 pointer-events-none`} />
+                    <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
+                    />
                 </div>
                 
-                <p className="text-gray-400 text-lg mb-8 leading-relaxed border-b border-white/5 pb-8 flex-grow">
-                  {project.description}
-                </p>
+                {/* Descrição Centralizada */}
+                <div className="min-h-[80px] flex items-center justify-center mb-0">
+                  <p className="text-gray-400 text-lg leading-relaxed text-center">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* DIVIDER CENTRALIZADO */}
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-8 shrink-0"></div>
                 
-                {/* Tech Stack */}
-                <div className="mb-8">
+                {/* Tech Stack Centralizado */}
+                <div className="mb-8 text-center min-h-[60px]">
                   <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-4">Tecnologias</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap justify-center gap-2">
                     {project.tech.map((tech, i) => (
                       <span 
                         key={i}
@@ -140,35 +146,43 @@ export default function Portfolio() {
                 </div>
 
                 {/* Metrics Grid */}
-                <div className="grid grid-cols-3 gap-4 mb-8 bg-black/20 rounded-2xl p-4 border border-white/5">
+                <div className="grid grid-cols-3 gap-2 mb-8 bg-black/20 rounded-2xl p-3 border border-white/5 mt-auto">
                   {project.metrics.map((metric, i) => (
-                    <div key={i} className="text-center">
-                      <div className="text-white font-bold mb-1">{metric.value}</div>
-                      <div className="text-xs text-gray-500">{metric.label}</div>
+                    <div key={i} className="flex flex-col items-center justify-center text-center">
+                      <div className="text-white font-bold mb-1 text-sm md:text-base whitespace-nowrap">
+                        {metric.value}
+                      </div>
+                      <div className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wide">
+                        {metric.label}
+                      </div>
                     </div>
                   ))}
                 </div>
 
-                {/* Ações */}
-                <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                  <a 
-                    href={`https://wa.me/+8108084138770?text=Gostei do projeto ${project.title}, quero um similar!`}
-                    target="_blank"
-                    className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white transition-all duration-300 bg-gradient-to-r ${project.color} hover:shadow-lg hover:brightness-110`}
-                  >
-                    Quero um Igual
-                  </a>
+                {/* --- AÇÕES (BOTOES) --- */}
+                <div className="flex flex-col gap-3">
+                  {/* Botão Acessar Site (EM CIMA) */}
                   {project.link !== "#" && (
                     <a 
                       href={project.link}
                       target="_blank"
-                      className="sm:hidden flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white border border-white/10 hover:bg-white/5 transition-all"
+                      className="flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-gray-200 border border-white/10 hover:bg-white/5 hover:text-white hover:border-white/20 transition-all duration-300 w-full group/btn"
                     >
-                      Ver Site Online
-                      <ExternalLink size={18} />
+                      Acessar Site
+                      <ExternalLink size={16} className="text-gray-400 group-hover/btn:text-white transition-colors" />
                     </a>
                   )}
+
+                  {/* Botão Quero um Igual (EM BAIXO) */}
+                  <a 
+                    href={`https://wa.me/+8108084138770?text=Gostei do projeto ${project.title}, quero um similar!`}
+                    target="_blank"
+                    className={`flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-white transition-all duration-300 bg-gradient-to-r ${project.color} hover:shadow-lg hover:brightness-110 w-full`}
+                  >
+                    Quero um Igual
+                  </a>
                 </div>
+
               </div>
             </div>
           ))}
