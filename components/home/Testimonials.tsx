@@ -20,14 +20,7 @@ const testimonials = [
     image: "/images/comentarios/foto2.jpg",
     gradient: "from-purple-500 to-pink-500"
   },
-  {
-    name: "Dr. Roberto Lima",
-    role: "Clínica Saúde Total",
-    content: "Site rápido, seguro e muito fácil de atualizar. O sistema de agendamento facilitou muito a gestão da clínica. Excelente suporte pós-venda!",
-    rating: 5,
-    image: "/images/comentarios/foto3.jpg", 
-    gradient: "from-emerald-500 to-green-500"
-  }
+  
 ];
 
 export default function Testimonials() {
