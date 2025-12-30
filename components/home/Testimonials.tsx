@@ -9,16 +9,14 @@ const testimonials = [
     role: "CEO - Hardstyle Custom",
     content: "Eu nunca pensei em fazer um site, mas, quando decidimos, gostamos da atenção, da agilidade e do bom gosto de ajudar a escolher os detalhes quando estávamos confusos. Muito atencioso. Obrigada, Murilo.",
     rating: 5,
-    // Caminho atualizado para a pasta public
     image: "/images/comentarios/foto1.jpg", 
     gradient: "from-blue-500 to-cyan-500"
   },
   {
-    name: "Ana Santos", // (Se quiser trocar esse nome/foto depois, é só atualizar aqui)
-    role: "Dona do Restaurante Bella Vista",
-    content: "Trabalho impecável! Meu restaurante agora tem reservas online e os clientes amam a experiência. Super recomendo para qualquer comércio.",
+    name: "Karla Shirabe",
+    role: "Estética Inovar",
+    content: "Eu amei o site,a praticidade e o layout profissional.",
     rating: 5,
-    // Caminho atualizado para a pasta public
     image: "/images/comentarios/foto2.jpg",
     gradient: "from-purple-500 to-pink-500"
   },
@@ -27,7 +25,6 @@ const testimonials = [
     role: "Clínica Saúde Total",
     content: "Site rápido, seguro e muito fácil de atualizar. O sistema de agendamento facilitou muito a gestão da clínica. Excelente suporte pós-venda!",
     rating: 5,
-    // Se você não tiver a foto3, pode repetir a foto1 ou foto2 temporariamente
     image: "/images/comentarios/foto3.jpg", 
     gradient: "from-emerald-500 to-green-500"
   }
@@ -37,12 +34,8 @@ export default function Testimonials() {
   return (
     <section className="relative py-20 lg:py-32 bg-neutral-950 overflow-hidden">
       
-      {/* --- EFEITOS DE FUNDO (Igual Pricing/Contact) --- */}
-      
-      {/* 1. A LUZ DE DIVISÓRIA (Linha superior brilhante) */}
+      {/* --- EFEITOS DE FUNDO --- */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
-
-      {/* 2. Orbs de luz (Blur nos cantos) */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
 
@@ -71,7 +64,8 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="group relative bg-neutral-900/50 backdrop-blur-sm border border-white/5 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/5"
+              // ADICIONADO: 'flex flex-col h-full' para garantir que os cards tenham a mesma altura e conteúdo flexível
+              className="group relative bg-neutral-900/50 backdrop-blur-sm border border-white/5 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/5 flex flex-col h-full"
             >
               {/* Efeito de Borda Gradient no Hover */}
               <div className={`absolute inset-0 rounded-3xl border border-transparent group-hover:border-white/10 transition-colors duration-300`}></div>
@@ -89,17 +83,18 @@ export default function Testimonials() {
               </div>
               
               {/* Texto do Depoimento */}
-              <p className="text-gray-300 mb-8 italic leading-relaxed relative z-10">
+              {/* ADICIONADO: 'flex-grow' para empurrar o rodapé (foto) para baixo */}
+              <p className="text-gray-300 mb-8 italic leading-relaxed relative z-10 flex-grow">
                 "{testimonial.content}"
               </p>
               
-              {/* Autor */}
-              <div className="flex items-center gap-4 pt-6 border-t border-white/5">
-                <div className="relative">
+              {/* Autor (Sempre alinhado no fundo) */}
+              <div className="flex items-center gap-4 pt-6 border-t border-white/5 mt-auto">
+                <div className="relative shrink-0">
                   {/* Círculo Colorido em volta da foto */}
                   <div className={`absolute -inset-0.5 bg-gradient-to-r ${testimonial.gradient} rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300 blur-[1px]`}></div>
                   
-                  {/* IMAGEM: Agora usando o path local */}
+                  {/* IMAGEM */}
                   <div 
                     className="relative w-12 h-12 rounded-full bg-cover bg-center border-2 border-neutral-900"
                     style={{ backgroundImage: `url(${testimonial.image})` }}
