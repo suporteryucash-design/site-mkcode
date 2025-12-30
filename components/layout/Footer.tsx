@@ -1,7 +1,7 @@
 // src/components/layout/Footer.tsx
 "use client";
 
-import { Code2, Instagram, Linkedin, Github } from "lucide-react";
+import { Code2, Instagram } from "lucide-react"; // Removi Linkedin e Github daqui
 import Link from "next/link";
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-950 border-t border-white/5 relative">
       
-      {/* --- LUZ PULSANTE E BRILHO (Copiado do Navbar) --- */}
+      {/* --- LUZ PULSANTE E BRILHO --- */}
       <div className="absolute top-0 left-0 w-full h-[1px] overflow-hidden z-10">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-80 animate-pulse"></div>
         <div className="absolute top-0 left-[-50%] w-[200%] h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-60 blur-[1px] animate-shine" 
@@ -23,7 +23,7 @@ export default function Footer() {
           {/* Logo e Descrição */}
           <div className="md:col-span-2">
             
-            {/* LOGO MK CODE (Versão Footer - Maior) */}
+            {/* LOGO MK CODE */}
             <div className="mb-6">
               <Link href="/" className="inline-flex items-center gap-3 group">
                 {/* Ícone */}
@@ -63,14 +63,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-6">Redes Sociais</h3>
             <div className="flex gap-4">
-              <a href="https://instagram.com/seuusuario" target="_blank" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 transition-all hover:-translate-y-1">
+              {/* MANTIDO APENAS O INSTAGRAM */}
+              <a href="https://instagram.com/mkcodesolutions" target="_blank" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 transition-all hover:-translate-y-1">
                 <Instagram size={20} />
-              </a>
-              <a href="https://linkedin.com/in/seuusuario" target="_blank" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white hover:bg-blue-600 transition-all hover:-translate-y-1">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://github.com/seuusuario" target="_blank" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white hover:bg-gray-700 transition-all hover:-translate-y-1">
-                <Github size={20} />
               </a>
             </div>
           </div>
@@ -87,7 +82,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Animação do Shine (Necessário para o efeito funcionar) */}
+      {/* Animação do Shine */}
       <style jsx>{`
         @keyframes shine {
           0% { transform: translateX(-100%); }

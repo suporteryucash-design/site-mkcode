@@ -1,4 +1,4 @@
-// app/page.tsx (versão sem comparação com concorrência)  <Testimonials />
+// app/page.tsx (versão sem comparação com concorrência)  
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 
@@ -21,7 +21,7 @@ export default function Home() {
       <Portfolio />
       <Pricing />
       <Services />
-     
+     <Testimonials />
       <Contact />
       <Footer />
       <WhatsAppFloat />

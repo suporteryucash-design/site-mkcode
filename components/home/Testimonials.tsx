@@ -5,19 +5,21 @@ import { Star, Quote, MessageSquare } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Carlos Silva",
+    name: "Kenny e Tiemi",
     role: "CEO - Hardstyle Custom",
-    content: "O MK Dev transformou completamente nossa presença online. O site ficou incrível e as vendas aumentaram 40% em 3 meses. Profissionalismo total!",
+    content: "Eu nunca pensei em fazer um site, mas, quando decidimos, gostamos da atenção, da agilidade e do bom gosto de ajudar a escolher os detalhes quando estávamos confusos. Muito atencioso. Obrigada, Murilo.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150",
+    // Caminho atualizado para a pasta public
+    image: "/images/comentarios/foto1.jpg", 
     gradient: "from-blue-500 to-cyan-500"
   },
   {
-    name: "Ana Santos",
+    name: "Ana Santos", // (Se quiser trocar esse nome/foto depois, é só atualizar aqui)
     role: "Dona do Restaurante Bella Vista",
     content: "Trabalho impecável! Meu restaurante agora tem reservas online e os clientes amam a experiência. Super recomendo para qualquer comércio.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150",
+    // Caminho atualizado para a pasta public
+    image: "/images/comentarios/foto2.jpg",
     gradient: "from-purple-500 to-pink-500"
   },
   {
@@ -25,7 +27,8 @@ const testimonials = [
     role: "Clínica Saúde Total",
     content: "Site rápido, seguro e muito fácil de atualizar. O sistema de agendamento facilitou muito a gestão da clínica. Excelente suporte pós-venda!",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150",
+    // Se você não tiver a foto3, pode repetir a foto1 ou foto2 temporariamente
+    image: "/images/comentarios/foto3.jpg", 
     gradient: "from-emerald-500 to-green-500"
   }
 ];
@@ -95,6 +98,8 @@ export default function Testimonials() {
                 <div className="relative">
                   {/* Círculo Colorido em volta da foto */}
                   <div className={`absolute -inset-0.5 bg-gradient-to-r ${testimonial.gradient} rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300 blur-[1px]`}></div>
+                  
+                  {/* IMAGEM: Agora usando o path local */}
                   <div 
                     className="relative w-12 h-12 rounded-full bg-cover bg-center border-2 border-neutral-900"
                     style={{ backgroundImage: `url(${testimonial.image})` }}

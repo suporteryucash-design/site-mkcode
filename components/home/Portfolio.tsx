@@ -1,7 +1,7 @@
 // src/components/home/Portfolio.tsx
 "use client";
 
-import { ExternalLink, Store, Briefcase, ArrowUpRight, CheckCircle2, Zap } from "lucide-react";
+import { ExternalLink, Store, Briefcase, ArrowUpRight, CheckCircle2, Zap, Sparkles } from "lucide-react";
 
 const projects = [
   {
@@ -32,6 +32,21 @@ const projects = [
       { label: "Status", value: "Validado" },
       { label: "Idiomas", value: "4 Suportados" },
       { label: "Users", value: "Em crescimento" }
+    ]
+  },
+  {
+    title: "Estética Inovar",
+    description: "Website institucional de alto padrão para clínica de estética. Design minimalista focado na experiência do usuário.",
+    type: "Beleza & Estética",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "from-rose-500 to-orange-400", // Gradiente estilo "Rose Gold"
+    gradient: "from-rose-500/20 to-orange-500/20",
+    link: "https://www.esteticainovar.com",
+    tech: ["Next.js", "Animation", "UI/UX Design", "Responsivo"],
+    metrics: [
+      { label: "Design", value: "Premium" },
+      { label: "Retenção", value: "Alta" },
+      { label: "Mobile", value: "100%" }
     ]
   }
 ];
@@ -70,7 +85,7 @@ export default function Portfolio() {
         </div>
 
         {/* Grid de Projetos */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {projects.map((project, index) => (
             <div 
               key={index}
@@ -79,7 +94,7 @@ export default function Portfolio() {
               {/* Brilho Superior no Hover */}
               <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
-              <div className="p-8 md:p-10">
+              <div className="p-8 md:p-10 flex flex-col h-full">
                 {/* Header do Card */}
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
                   <div className="flex items-start gap-4">
@@ -90,7 +105,7 @@ export default function Portfolio() {
                     </div>
                     <div>
                       <div className="text-sm font-medium text-blue-400 mb-1">{project.type}</div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h3>
+                      <h3 className="text-2xl font-bold text-white leading-tight">{project.title}</h3>
                     </div>
                   </div>
 
@@ -98,14 +113,14 @@ export default function Portfolio() {
                     <a 
                       href={project.link}
                       target="_blank"
-                      className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all duration-300"
+                      className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-white/5 hover:bg-white hover:text-black transition-all duration-300 flex-shrink-0"
                     >
                       <ArrowUpRight className="w-5 h-5" />
                     </a>
                   )}
                 </div>
                 
-                <p className="text-gray-400 text-lg mb-8 leading-relaxed border-b border-white/5 pb-8">
+                <p className="text-gray-400 text-lg mb-8 leading-relaxed border-b border-white/5 pb-8 flex-grow">
                   {project.description}
                 </p>
                 
@@ -135,7 +150,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Ações */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 mt-auto">
                   <a 
                     href={`https://wa.me/+8108084138770?text=Gostei do projeto ${project.title}, quero um similar!`}
                     target="_blank"
