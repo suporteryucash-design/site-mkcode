@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Karla Shirabe",
     role: "Estética Inovar",
-    content: "Eu amei o site,a praticidade e o layout profissional.",
+    content: "Arigatoo!!!!!Rapidez e eficiência! Sabe entender o que o cliente deseja! Fiquei muito satisfeita super indico😉 Ameiiii!",
     rating: 5,
     image: "/images/comentarios/foto2.jpg",
     gradient: "from-purple-500 to-pink-500"

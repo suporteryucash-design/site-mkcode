@@ -2,13 +2,17 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, Send, CheckCircle, MessageSquare, Loader2 } from "lucide-react";
+import Image from "next/image"; // ADICIONADO: Import do Image
+import { Mail, Phone, Send, CheckCircle, Loader2 } from "lucide-react";
 
 export default function Contact() {
   // Estados de controle da interface
   const [isSubmitting, setIsSubmitting] = useState(false); // Carregando
   const [isSubmitted, setIsSubmitted] = useState(false);   // Sucesso
   const [isError, setIsError] = useState(false);           // Erro
+
+  // --- CAMINHO DO SEU ÍCONE PERSONALIZADO ---
+  const contactIcon = "/icons/contato.png";
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault(); // Impede o recarregamento da página
@@ -59,7 +63,17 @@ export default function Contact() {
         {/* Cabeçalho */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
-            <MessageSquare className="w-4 h-4 text-blue-400" />
+            
+            {/* SUBSTITUIÇÃO FEITA AQUI: Ícone contato.png */}
+            <div className="relative w-4 h-4">
+                <Image 
+                    src={contactIcon}
+                    alt="Ícone Contato"
+                    fill
+                    className="object-contain"
+                />
+            </div>
+
             <span className="text-gray-300 text-sm font-medium">Contato Direto</span>
           </div>
 

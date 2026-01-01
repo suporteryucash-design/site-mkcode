@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image"; // ADICIONADO: Import do Image
 import { 
   Check, 
   Sparkles, 
@@ -34,7 +35,7 @@ const plans = [
       { icon: <Zap className="w-5 h-5" />, text: "Carregamento ultrarrápido" },
       { icon: <Shield className="w-5 h-5" />, text: "SSL seguro (https)" },
       { icon: <Sparkles className="w-5 h-5" />, text: "Integração WhatsApp direto" },
-      { icon: <Check className="w-5 h-5" />, text: "Hospedagem 1 ano + domínio" }
+      { icon: <Check className="w-5 h-5" />, text: "1 ano de Dominio incluso" }
     ],
     cta: "Começar Meu Site",
     delay: "0"
@@ -86,6 +87,9 @@ const plans = [
 export default function Pricing() {
   const [expandedPlan, setExpandedPlan] = useState<number | null>(null);
 
+  // --- DEFINA O CAMINHO DO SEU ÍCONE AQUI ---
+  const valueIcon = "/icons/valor.png"; 
+
   return (
     <section id="planos" className="relative py-20 lg:py-32 bg-neutral-950 overflow-hidden">
       {/* Background Effects */}
@@ -97,7 +101,17 @@ export default function Pricing() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 mb-6 group">
-            <Sparkles className="w-4 h-4 text-blue-400 group-hover:rotate-180 transition-transform duration-500" />
+            
+            {/* SUBSTITUIÇÃO FEITA AQUI: Ícone personalizado */}
+            <div className="relative w-5 h-5 group-hover:rotate-180 transition-transform duration-500">
+               <Image 
+                 src={valueIcon} 
+                 alt="Ícone Valor"
+                 fill
+                 className="object-contain"
+               />
+            </div>
+            
             <span className="text-blue-400 font-bold text-sm">VALOR TRANSPARENTE</span>
           </div>
           
