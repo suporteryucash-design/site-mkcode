@@ -16,9 +16,9 @@ import {
 const services = [
   {
     icon: <Globe className="w-6 h-6" />,
-    title: "Desenvolvimento Web",
-    description: "Sites institucionais e Landing Pages. Design focado em conversão e autoridade.",
-    features: ["Next.js & React", "SEO Otimizado", "Responsivo (Mobile)", "Alta Performance"],
+    title: "Sites que Convertem", // Título focado em resultado
+    description: "Crio páginas que não são apenas bonitas, mas desenhadas estrategicamente para transformar visitantes em novos contatos no seu WhatsApp.",
+    features: ["Design Exclusivo", "Foco em Vendas", "Totalmente Mobile", "SEO para o Japão"],
     color: "text-blue-400",
     gradient: "from-blue-500 to-cyan-500",
     shadow: "group-hover:shadow-blue-500/10",
@@ -26,9 +26,9 @@ const services = [
   },
   {
     icon: <Bot className="w-6 h-6" />,
-    title: "Automação & Bots",
-    description: "Robôs inteligentes para realizar tarefas repetitivas. Economize tempo e evite erros.",
-    features: ["Web Scraping", "Python Scripts", "Coleta de Dados", "Auto-Preenchimento"],
+    title: "Automação de Processos", // Foco em poupar tempo do cliente
+    description: "Cansado de tarefas repetitivas? Desenvolvo robôs e ferramentas que fazem o trabalho chato por você, eliminando erros e sobrando mais tempo.",
+    features: ["Integração WhatsApp", "Robôs de Dados", "Planilhas Inteligentes", "Avisos Automáticos"],
     color: "text-purple-400",
     gradient: "from-purple-500 to-pink-500",
     shadow: "group-hover:shadow-purple-500/10",
@@ -36,9 +36,9 @@ const services = [
   },
   {
     icon: <Database className="w-6 h-6" />,
-    title: "Sistemas & SaaS",
-    description: "Plataformas complexas com áreas de membros, painéis administrativos e bancos de dados.",
-    features: ["Dashboards", "Gestão de Usuários", "PostgreSQL", "Pagamentos Online"],
+    title: "Sistemas Customizados", // Mostra que você constrói ferramentas sérias
+    description: "Precisa de algo mais complexo? Desenvolvo plataformas com área de membros, painéis administrativos e gestão de clientes sob medida.",
+    features: ["Painéis de Gestão", "Bancos de Dados", "Sistemas Financeiros", "Acessos Seguros"],
     color: "text-emerald-400",
     gradient: "from-emerald-500 to-green-500",
     shadow: "group-hover:shadow-emerald-500/10",
@@ -46,9 +46,9 @@ const services = [
   },
   {
     icon: <Layout className="w-6 h-6" />,
-    title: "UI/UX Design",
-    description: "Interfaces desenhadas para encantar. Foco total na experiência do usuário final.",
-    features: ["Figma", "Prototipagem", "Design System", "Modernidade"],
+    title: "Design de Interface (UI)", // Linguagem mais profissional
+    description: "Dou vida à sua marca com layouts modernos e intuitivos, focando na melhor experiência para quem usa seu site ou sistema.",
+    features: ["Protótipos no Figma", "Identidade Visual", "User Experience", "Visual Moderno"],
     color: "text-orange-400",
     gradient: "from-orange-500 to-amber-500",
     shadow: "group-hover:shadow-orange-500/10",
@@ -56,9 +56,9 @@ const services = [
   },
   {
     icon: <Code2 className="w-6 h-6" />,
-    title: "Refatoração de Sites",
-    description: "Seu site é lento ou antigo? Reescrevo o código para deixá-lo novo e rápido.",
-    features: ["Clean Code", "Otimização 100%", "Correção de Bugs", "Tecnologias Atuais"],
+    title: "Upgrade & Manutenção", // Focado em resolver um problema existente
+    description: "Seu site atual está lento ou antigo? Eu refaço o código para deixá-lo ultra-rápido, seguro e atualizado com as tecnologias de 2026.",
+    features: ["Otimização de Velocidade", "Correção de Erros", "Atualização Tecnológica", "Segurança Reforçada"],
     color: "text-rose-400",
     gradient: "from-red-500 to-rose-500",
     shadow: "group-hover:shadow-rose-500/10",
@@ -66,9 +66,9 @@ const services = [
   },
   {
     icon: <Zap className="w-6 h-6" />,
-    title: "APIs & Integrações",
-    description: "Conecto seu site ao WhatsApp, planilhas, CRMs e outras ferramentas essenciais.",
-    features: ["API Rest", "Webhooks", "Chatbots", "Automação de Fluxo"],
+    title: "Integrações Inteligentes", // Mostra conectividade
+    description: "Conecto seu site com as ferramentas que você já usa: Google Sheets, CRMs, Meios de Pagamento e APIs de terceiros.",
+    features: ["Pagamentos Online", "Webhooks", "Sincronização de Dados", "Conexão com Apps"],
     color: "text-yellow-400",
     gradient: "from-yellow-500 to-orange-500",
     shadow: "group-hover:shadow-yellow-500/10",
@@ -80,12 +80,8 @@ export default function Services() {
   return (
     <section id="servicos" className="relative py-20 lg:py-32 bg-neutral-950 overflow-hidden">
       
-      {/* --- EFEITOS DE FUNDO (Padronizado) --- */}
-      
-      {/* 1. A LUZ DE DIVISÓRIA (Linha superior brilhante) */}
+      {/* --- EFEITOS DE FUNDO --- */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
-
-      {/* 2. Orbs de luz (Blur nos cantos) */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -95,17 +91,17 @@ export default function Services() {
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
             <Cpu className="w-4 h-4 text-blue-400" />
-            <span className="text-gray-300 text-sm font-medium">Tech Stack Moderna</span>
+            <span className="text-gray-300 text-sm font-medium">Como posso te ajudar</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             Soluções Digitais <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-              Sob Medida
+              Para o seu Negócio
             </span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            Eu combino design estratégico com automação inteligente (bots) para criar ecossistemas digitais que economizam seu tempo e aumentam seu lucro.
+            Misturo design estratégico, código de alta performance e automação inteligente para criar ferramentas que trabalham por você 24 horas por dia.
           </p>
         </div>
 
@@ -116,10 +112,8 @@ export default function Services() {
               key={index}
               className={`group relative h-full bg-neutral-900/40 backdrop-blur-sm border border-white/5 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-neutral-800/60 ${service.border} ${service.shadow}`}
             >
-              {/* Brilho Interno no Hover */}
               <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
 
-              {/* Cabeçalho do Card */}
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-6">
                   <div className={`p-3 rounded-2xl bg-gradient-to-br ${service.gradient} bg-opacity-10 group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
@@ -138,7 +132,6 @@ export default function Services() {
                   {service.description}
                 </p>
                 
-                {/* Features */}
                 <div className="space-y-3 mb-8 pt-6 border-t border-white/5">
                   {service.features.map((feature, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
@@ -148,14 +141,13 @@ export default function Services() {
                   ))}
                 </div>
 
-                {/* Link de Ação Elegante */}
                 <a 
-                  href={`https://wa.me/+8108084138770?text=Olá! Gostaria de saber mais sobre: ${service.title}`}
+                  href={`https://wa.me/+8108084138770?text=Olá! Gostaria de conversar sobre: ${service.title}`}
                   target="_blank"
                   className="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:gap-3 transition-all duration-300"
                 >
                   <span className={`bg-clip-text text-transparent bg-gradient-to-r ${service.gradient}`}>
-                    Solicitar Orçamento
+                    Quero saber mais
                   </span>
                   <ArrowRight className={`w-4 h-4 ${service.color}`} />
                 </a>
@@ -173,10 +165,10 @@ export default function Services() {
               className="flex items-center gap-3 px-8 py-4 bg-neutral-900 rounded-full hover:bg-neutral-800 transition-all duration-300 group"
             >
               <span className="text-gray-300 font-medium group-hover:text-white transition-colors">
-                Tem um desafio diferente?
+                Tem uma necessidade específica?
               </span>
               <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-                Fale comigo
+                Fale diretamente comigo
               </span>
               <ArrowRight className="w-4 h-4 text-purple-400 group-hover:translate-x-1 transition-transform" />
             </a>
