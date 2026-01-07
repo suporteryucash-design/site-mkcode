@@ -20,6 +20,14 @@ const testimonials = [
     image: "/images/comentarios/foto2.jpg",
     gradient: "from-purple-500 to-pink-500"
   },
+  {
+    name: "Kellyane Miashiro",
+    role: "Ewus - English with us",
+    content: "Que resultado impecável! Amei o resultado, ficou ainda melhor do que imaginei. Atendimento rápido e claro! Recomendarei a todos! Muito obrigada.",
+    rating: 5,
+    image: "/images/comentarios/foto3.jpg",
+    gradient: "from-purple-500 to-pink-500"
+  },
   
 ];
 

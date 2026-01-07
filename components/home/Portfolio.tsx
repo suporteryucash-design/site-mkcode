@@ -1,9 +1,25 @@
 // src/components/home/Portfolio.tsx
 "use client";
 
-import { ExternalLink, Store, Briefcase, CheckCircle2, Zap, Sparkles } from "lucide-react";
+import { ExternalLink, Store, Briefcase, CheckCircle2, Zap, Sparkles, GraduationCap } from "lucide-react";
 
 const projects = [
+  {
+    title: "E.WUS English",
+    description: "Plataforma educacional para ensino de inglês com metodologia personalizada, alta performance e SEO otimizado.",
+    type: "Educação Online",
+    icon: <GraduationCap className="w-6 h-6" />,
+    color: "from-pink-600 to-rose-600",
+    gradient: "from-pink-500/20 to-rose-500/20",
+    link: "https://e-wus.com",
+    image: "/images/portfolio/ewus.jpg", // Lembre-se de salvar um print do site com esse nome na pasta
+    tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "SEO Avançado"],
+    metrics: [
+      { label: "SEO", value: "100%" },
+      { label: "Performance", value: "Instantânea" },
+      { label: "Design", value: "Clean" }
+    ]
+  },
   {
     title: "Hardstyle Custom",
     description: "Loja de carros personalizada de acordo com o gosto do cliente, com sistema de multi-idioma.",
@@ -107,7 +123,6 @@ export default function Portfolio() {
                       <h3 className="text-2xl font-bold text-white leading-tight h-[3.5rem] flex items-center">{project.title}</h3>
                     </div>
                   </div>
-                  {/* (Setinha removida daqui conforme solicitado) */}
                 </div>
 
                 {/* --- ÁREA DA MINI FOTO --- */}
